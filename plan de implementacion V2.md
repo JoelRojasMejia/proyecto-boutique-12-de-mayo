@@ -190,61 +190,30 @@ aztro_boutique/
 
 ---
 
-## 📦 4. DEPENDENCIAS REQUERIDAS (pubspec.yaml)
-
+📦 **4. DEPENDENCIAS REQUERIDAS (pubspec.yaml)**
 Lista numerada con propósito y categoría. Las versiones se manejarán mediante semver actualizado al momento de la creación del proyecto.
 
-**Núcleo y Estado**
-1. flutter_riverpod (o flutter_bloc) – Gestión de estado reactivo y inyección.
-2. freezed_annotation + build_runner + freezed – Generación de modelos inmutables y serialización.
-3. json_annotation + json_serializable – Mapeo JSON bidireccional seguro.
-4. flutter_hooks / provider – Alternativas según arquitectura elegida.
+**Firebase y Conexión a Backend**
+1. `firebase_core` – Inicialización obligatoria del ecosistema Firebase dentro de la app.
+2. `firebase_auth` – Manejo de registro, inicio de sesión y recuperación por correo/contraseña.
+3. `cloud_firestore` – Base de datos en tiempo real para guardar usuarios, productos, carritos y pedidos.
+4. `firebase_storage` – Almacenamiento, subida y descarga de imágenes de catálogo y banners.
 
-**Firebase y Backend (Antigravity + Console)**
-5. firebase_core – Inicialización de SDK.
-6. firebase_auth – Autenticación por email/password y sesión.
-7. cloud_firestore – Base de datos en tiempo real y consultas.
-8. firebase_storage – Gestión de imágenes y multimedia.
-9. firebase_messaging – Notificaciones push.
-10. firebase_analytics – Rastreo de eventos y funnel.
-11. firebase_crashlytics – Reporte de errores en producción.
+**Estado y Navegación**
+5. `provider` – Gestión de estado sencilla y directa para sesiones, carritos y flujos de compra sin configuraciones complejas.
+6. `go_router` – Navegación declarativa entre pantallas y protección de rutas para usuarios autenticados.
 
-**Navegación y Routing**
-12. go_router – Enrutamiento declarativo, deeplinks y autenticación guards.
+**Interfaz y Experiencia Visual**
+7. `cached_network_image` – Descarga, muestra y guarda en caché automáticamente las imágenes remotas del catálogo.
+8. `carousel_slider` – Creación de carruseles deslizantes para banners de ofertas y galerías de fotos de productos.
+9. `google_fonts` – Carga de tipografías elegantes directamente desde la red, sin necesidad de archivos locales.
+10. `shimmer` – Efectos visuales de carga (skeleton) para mejorar la percepción de velocidad mientras se obtienen datos.
 
-**UI y Experiencia**
-13. cached_network_image – Caché y optimización de imágenes remotas.
-14. flutter_svg – Renderizado de iconos y vectores escalables.
-15. carousel_slider / flutter_swiper – Carruseles de banners y productos.
-16. flutter_staggered_grid_view – Grids responsivos para catálogo.
-17. flutter_rating_bar – Calificación de productos.
-18. lottie_flutter – Animaciones de carga, éxito y microinteracciones.
-19. shimmer – Skeleton loaders para estados de carga.
-20. google_fonts / flutter_localized_fonts – Tipografías externas.
+**Utilidades y Datos Locales**
+11. `shared_preferences` – Guardar datos ligeros en el dispositivo: preferencia de tema, sesión activa y configuraciones básicas.
+12. `intl` – Formato automático de precios, fechas y monedas para el checkout y el historial de órdenes.
 
-**Formularios y Validación**
-21. formz / flutter_form_builder – Validación reactiva y tipos seguros.
-22. input_mask / intl_phone_number_input – Formato de teléfonos y códigos postales.
 
-**Utilidades y Almacenamiento Local**
-23. shared_preferences / hive – Persistencia ligera de configuraciones y sesión.
-24. intl – Formato de fechas, monedas y localización.
-25. url_launcher – Apertura de enlaces externos y redes sociales.
-26. uuid – Generación de identificadores locales antes de sync con BD.
-27. envied / flutter_dotenv – Variables de entorno seguras.
-
-**Seguridad y Red**
-28. crypto – Hashing para firmas locales y checksums.
-29. http / dio – Cliente HTTP para APIs externas (pasarelas, geocodificación).
-30. flutter_secure_storage – Almacenamiento cifrado de tokens sensibles.
-
-**Pruebas y Calidad**
-31. mocktail / mockito – Simulación de dependencias.
-32. flutter_test – Framework nativo de pruebas.
-33. integration_test – Pruebas E2E multiplataforma.
-34. very_good_analysis / custom_lint – Linting y estándares de código.
-
----
 
 ## 🛠️ 5. PROCEDIMIENTO PASO A PASO PARA LA IMPLEMENTACIÓN
 
