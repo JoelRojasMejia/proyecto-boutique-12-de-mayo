@@ -27,10 +27,11 @@ class AuthProvider extends ChangeNotifier {
 
   void initialize() {
     _authService.authStateChanges.listen((User? user) async {
-      _firebaseUser = user;
       if (user != null) {
         await _fetchUserDetails(user.uid);
+        _firebaseUser = user;
       } else {
+        _firebaseUser = null;
         _userModel = null;
         _role = 'customer';
       }
@@ -73,6 +74,7 @@ class AuthProvider extends ChangeNotifier {
       final credential = await _authService.registerWithEmail(email, password);
       if (credential.user != null) {
         await _userService.createUserDocument(credential.user!.uid, email, nombre);
+        await _fetchUserDetails(credential.user!.uid);
         // User is automatically signed in, authStateChanges handles the rest
       }
       _setLoading(false);
